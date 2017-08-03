@@ -1,0 +1,12 @@
+{
+	"port":"8080",
+	"db":{
+		"address":"localhost",
+		"port":"3306",
+		"username":"commadmin",
+		"userpass":"CommComm20!6"
+	},
+	"key":"~/key.pem",
+	"cert":"~/cert.pem",
+	"secret":"1s#ER$vssdUTYf23!WRT$%^$254325"
+}
