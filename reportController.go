@@ -271,8 +271,7 @@ func DeactivateComment(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	} else if &u == nil || u.Active == -1 {
-		http.Error(w, "Comment
-		 not found", http.StatusNotFound)
+		http.Error(w, "Comment not found", http.StatusNotFound)
 		return
 	}
 	u, err = deactivateCommentByID(reportID, commentID)
