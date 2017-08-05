@@ -23,7 +23,7 @@ type User struct {
 	ID       int       `json:"id"`
 	Email    string    `json:"email"`
 	Password string    `json:"-"`
-	Date     time.Time `json:"created"`
+	Date     time.Time `json:"-"`
 	Active   int       `json:"-"`
 }
 
@@ -133,11 +133,11 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	passwords := vals["password"]
 	var email string
 	var password string
-	if len(emails) > 0 {
+	if len(emails) > 0 && len(passwords) > 0 {
 		email = emails[0]
 		password = passwords[0]
 	} else {
-		http.Error(w, "Please provide email", http.StatusBadRequest)
+		http.Error(w, "Please provide anemail and password", http.StatusBadRequest)
 		return
 	}
 
